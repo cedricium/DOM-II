@@ -77,3 +77,31 @@ document.addEventListener('DOMContentLoaded', () => {
     logo.classList.add('rotate')
   }, 1000)
 })
+
+// Unique Event Listener #7: `keyup` - not very useful keyboard shortcuts
+document.addEventListener('keyup', function(e) {
+  const mainContent = document.querySelector('div.container.home')
+  switch(e.key) {
+    case 'h':   // hide
+      mainContent.style.display = 'none';
+      break
+    case 's':   // show
+      mainContent.style.display = 'block';
+      break
+    default:
+      break
+  }
+})
+
+// Unique Event Listener #8: `click` - prevent nav items from refreshing page
+const navItems = document.querySelectorAll('.nav-link')
+navItems.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault()
+  })
+})
+
+// Unique Event Listener #9: `keypress` - prevent Space from scrolling page
+document.addEventListener('keypress', (e) => {
+  if (e.key === ' ') e.preventDefault()
+})
