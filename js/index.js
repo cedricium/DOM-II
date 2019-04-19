@@ -105,3 +105,17 @@ navItems.forEach(link => {
 document.addEventListener('keypress', (e) => {
   if (e.key === ' ') e.preventDefault()
 })
+
+
+// Below example outlines an example of event propagation being stopped
+const footer = document.querySelector('footer')
+const footerText = footer.querySelector('p')
+
+footer.addEventListener('click', (e) => {
+  console.log('Footer cliked!')
+})
+
+footerText.addEventListener('click', (e) => {
+  e.stopPropagation()
+  console.log('Footer text cliked!')
+})
