@@ -17,7 +17,7 @@ const getRandomColor = () => {
   return COLORS[Math.floor(Math.random() * COLORS.length)]
 }
 
-// Unique Event Listener #1: `mouseover/mouseleave` on images
+// Unique Event Listener #1/2: `mouseover/mouseleave` on images
 const images = document.querySelectorAll('img')
 images.forEach(img => {
   img.addEventListener('mouseover', function() {
@@ -31,14 +31,14 @@ images.forEach(img => {
   })
 })
 
-// Unique Event Listener #2: `scroll` - show alert once page end has been hit
+// Unique Event Listener #3: `scroll` - show alert once page end has been hit
 window.addEventListener('scroll', () => {
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
     alert(`You've reached the end of the page!`)
   }
 })
 
-// Unique Event Listener #3: `click` - change background color each button click
+// Unique Event Listener #4: `click` - change background color each button click
 const buttons = document.querySelectorAll('.btn')
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -57,20 +57,20 @@ buttons.forEach(btn => {
   })
 })
 
-// Unique Event Listener #4: `dblclick` plays cute sound
+// Unique Event Listener #5: `dblclick` plays cute sound
 document.body.addEventListener('dblclick', () => {
   const audio = new Audio('assets/cartoon_pluck_hair.mp3')
   audio.play()
 })
 
-// Unique Event Listener #5: `copy` acts as a broken highlighter
+// Unique Event Listener #6: `copy` acts as a broken highlighter
 document.addEventListener('copy', (e) => {
   const selection = document.getSelection()
   const selectedElement = selection.focusNode.parentElement
   selectedElement.style.background = getRandomColor()
 })
 
-// Unique Event Listener #6: `DOMContentLoaded` - logo loop da loops
+// Unique Event Listener #7: `DOMContentLoaded` - logo loop da loops
 const logo = document.querySelector('.logo-heading')
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 1000)
 })
 
-// Unique Event Listener #7: `keyup` - not very useful keyboard shortcuts
+// Unique Event Listener #8: `keyup` - not very useful keyboard shortcuts
 document.addEventListener('keyup', function(e) {
   const mainContent = document.querySelector('div.container.home')
   switch(e.key) {
@@ -93,7 +93,7 @@ document.addEventListener('keyup', function(e) {
   }
 })
 
-// Unique Event Listener #8: `click` - prevent nav items from refreshing page
+// Unique Event Listener #9: `click` - prevent nav items from refreshing page
 const navItems = document.querySelectorAll('.nav-link')
 navItems.forEach(link => {
   link.addEventListener('click', e => {
@@ -101,7 +101,7 @@ navItems.forEach(link => {
   })
 })
 
-// Unique Event Listener #9: `keypress` - prevent Space from scrolling page
+// Unique Event Listener #10: `keypress` - prevent Space from scrolling page
 document.addEventListener('keypress', (e) => {
   if (e.key === ' ') e.preventDefault()
 })
